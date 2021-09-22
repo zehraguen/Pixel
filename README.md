@@ -1,3 +1,3 @@
 # Pixel
 
-ist ein Programm, welches den Besuch bei dem Pixel cafe simuliert
+Pixel ist ein Projekt, welches die abläufe des Pixel Cafe besuchs simuliert.
