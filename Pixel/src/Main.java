@@ -2,51 +2,51 @@ import java.util.*;
 
 public class Main
 {
-	
+
 	static Queue<Kunde> meineQueue = new Queue<Kunde>();
-	
+
 	public static void main(String[] args)
 	{
 			System.out.println("Willkommen im Cafe Pixel");
 			System.out.println("------------------------");
 			System.out.println();
-      	
-			System.out.println("_________________¶¶¶1___¶¶¶____¶¶¶1_______________\r\n"
-      					 + "__________________¶¶¶____¶¶¶____1¶¶1______________\r\n"
-      			         + "___________________¶¶¶____¶¶¶____¶¶¶______________\r\n"
-      			         + "___________________¶¶¶____¶¶¶____¶¶¶______________\r\n"
-      			         + "__________________¶¶¶____1¶¶1___1¶¶1______________\r\n"
-      			         + "________________1¶¶¶____¶¶¶____¶¶¶1_______________\r\n"
-      			         + "______________1¶¶¶____¶¶¶1___¶¶¶1_________________\r\n"
-      			         + "_____________¶¶¶1___1¶¶1___1¶¶1___________________\r\n"
-      			         + "____________1¶¶1___1¶¶1___1¶¶1____________________\r\n"
-      			         + "____________1¶¶1___1¶¶1___1¶¶¶____________________\r\n"
-      			         + "_____________¶¶¶____¶¶¶1___¶¶¶1___________________\r\n"
-      			         + "______________¶¶¶¶___1¶¶¶___1¶¶¶__________________\r\n"
-      			         + "_______________1¶¶¶1___¶¶¶1___¶¶¶¶________________\r\n"
-      			         + "_________________1¶¶1____¶¶¶____¶¶¶_______________\r\n"
-      			         + "___________________¶¶1____¶¶1____¶¶1______________\r\n"
-      			         + "___________________¶¶¶____¶¶¶____¶¶¶______________\r\n"
-      			         + "__________________1¶¶1___1¶¶1____¶¶1______________\r\n"
-      			         + "_________________¶¶¶____¶¶¶1___1¶¶1_______________\r\n"
+
+			System.out.println("_________________Â¶Â¶Â¶1___Â¶Â¶Â¶____Â¶Â¶Â¶1_______________\r\n"
+      					 + "__________________Â¶Â¶Â¶____Â¶Â¶Â¶____1Â¶Â¶1______________\r\n"
+      			         + "___________________Â¶Â¶Â¶____Â¶Â¶Â¶____Â¶Â¶Â¶______________\r\n"
+      			         + "___________________Â¶Â¶Â¶____Â¶Â¶Â¶____Â¶Â¶Â¶______________\r\n"
+      			         + "__________________Â¶Â¶Â¶____1Â¶Â¶1___1Â¶Â¶1______________\r\n"
+      			         + "________________1Â¶Â¶Â¶____Â¶Â¶Â¶____Â¶Â¶Â¶1_______________\r\n"
+      			         + "______________1Â¶Â¶Â¶____Â¶Â¶Â¶1___Â¶Â¶Â¶1_________________\r\n"
+      			         + "_____________Â¶Â¶Â¶1___1Â¶Â¶1___1Â¶Â¶1___________________\r\n"
+      			         + "____________1Â¶Â¶1___1Â¶Â¶1___1Â¶Â¶1____________________\r\n"
+      			         + "____________1Â¶Â¶1___1Â¶Â¶1___1Â¶Â¶Â¶____________________\r\n"
+      			         + "_____________Â¶Â¶Â¶____Â¶Â¶Â¶1___Â¶Â¶Â¶1___________________\r\n"
+      			         + "______________Â¶Â¶Â¶Â¶___1Â¶Â¶Â¶___1Â¶Â¶Â¶__________________\r\n"
+      			         + "_______________1Â¶Â¶Â¶1___Â¶Â¶Â¶1___Â¶Â¶Â¶Â¶________________\r\n"
+      			         + "_________________1Â¶Â¶1____Â¶Â¶Â¶____Â¶Â¶Â¶_______________\r\n"
+      			         + "___________________Â¶Â¶1____Â¶Â¶1____Â¶Â¶1______________\r\n"
+      			         + "___________________Â¶Â¶Â¶____Â¶Â¶Â¶____Â¶Â¶Â¶______________\r\n"
+      			         + "__________________1Â¶Â¶1___1Â¶Â¶1____Â¶Â¶1______________\r\n"
+      			         + "_________________Â¶Â¶Â¶____Â¶Â¶Â¶1___1Â¶Â¶1_______________\r\n"
       			         + "________________11_____111_____11_________________\r\n"
-      			         + "__________¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶________\r\n"
-      			         + "1¶¶¶¶¶¶¶¶¶¶¶__¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶________\r\n"
-      			         + "1¶¶¶¶¶¶¶¶¶¶¶__1¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶________\r\n"
-      			         + "1¶¶_______¶¶__1¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶________\r\n"
-      			         + "1¶¶_______¶¶__1¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶________\r\n"
-      			         + "1¶¶_______¶¶__¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶________\r\n"
-      			         + "1¶¶_______¶¶__1¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶________\r\n"
-      			         + "_¶¶¶¶¶¶¶¶¶¶¶__¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶________\r\n"
-      			         + "_¶¶¶¶¶¶¶¶¶¶¶__¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶________\r\n"
-      			         + "__________¶¶___1¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶1________\r\n"
-      			         + "__________1¶¶___¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶_________\r\n"
-      			         + "____________¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶11__________\r\n"
+      			         + "__________Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶________\r\n"
+      			         + "1Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶__Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶________\r\n"
+      			         + "1Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶__1Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶________\r\n"
+      			         + "1Â¶Â¶_______Â¶Â¶__1Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶________\r\n"
+      			         + "1Â¶Â¶_______Â¶Â¶__1Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶________\r\n"
+      			         + "1Â¶Â¶_______Â¶Â¶__Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶________\r\n"
+      			         + "1Â¶Â¶_______Â¶Â¶__1Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶________\r\n"
+      			         + "_Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶__Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶________\r\n"
+      			         + "_Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶__Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶________\r\n"
+      			         + "__________Â¶Â¶___1Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶1________\r\n"
+      			         + "__________1Â¶Â¶___Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶_________\r\n"
+      			         + "____________Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶11__________\r\n"
       			         + "11_____________________________________________111\r\n"
-      			         + "1¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶1\r\n"
-      			         + "__¶¶111111111¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶111111111¶__\r\n"
+      			         + "1Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶1\r\n"
+      			         + "__Â¶Â¶111111111Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶Â¶111111111Â¶__\r\n"
       			         + "");
-      	
+
 		Scanner mS = new Scanner(System.in);
 		while(true)
 		{
@@ -56,7 +56,10 @@ public class Main
 			System.out.println();
 			System.out.println("1. Kunde anlegen");
 			System.out.println("2. Kunden anzeigen");
-			System.out.println("3. Programm verlassen");
+			System.out.println("3. Kunde xy loeschen");
+			System.out.println("4. Kunden zaehlen");
+			System.out.println("5. Erster Kunde verlaesst Pixel");
+			System.out.println("6. Programm verlassen");
 			System.out.println();
 			System.out.println("Deine Eingabe?");
 			System.out.println();
@@ -64,6 +67,7 @@ public class Main
 			System.out.println();
 			System.out.println("Es wird zum Menuepunkt "+eingabe+" gewechselt!");
 			System.out.println();
+			
 			if(eingabe == 1)
 			{
 				anlegen();
@@ -74,12 +78,25 @@ public class Main
 			}
 			if(eingabe == 3)
 			{
+				loeschen();
+			}
+			if(eingabe == 4)
+			{
+				zaehlen();
+			}
+			if(eingabe == 5)
+			{
+				bedient();
+			}
+			if(eingabe == 6)
+			{
 				System.out.println("Pixel wurde beendet");
 				System.exit(0);
 			}
 		}
 	} 
-  
+	
+
 	public static void anlegen()
 	{
 		Scanner mS = new Scanner(System.in);
@@ -87,47 +104,51 @@ public class Main
     	System.out.println("Kunde anlegen");
     	System.out.println("-------------");
     	System.out.println();
+    	
     	System.out.println("Wie heisst der Kunde?");
     	System.out.println();
     	String eingegebenerName = mS.next();
     	System.out.println();
+    	
     	System.out.println("Wie viel Geld hat der Kunde?");
     	System.out.println();
     	double eingegebenerWert = mS.nextDouble();
     	System.out.println();
-    	
+
     	Kunde meinKunde = new Kunde(eingegebenerName, eingegebenerWert);
     	meineQueue.enqueue(meinKunde); // Der Kunde wird eingereiht
-     
+
     	System.out.println();
     	System.out.println("Der Kunde mit dem Namen "+meinKunde.getName()+" wurde erzeugt und eingereiht.");
 	} 
-  
+	
+
 	public static void anzeigen()
 	{
 		Queue<Kunde> zwischenSpeicher = new Queue<Kunde>();
-		
+
 		if(meineQueue.isEmpty())
 		{
 			System.out.println("Es stehen keine Kunden an");
+			System.out.println();
 		}
 		else
 		{
 			System.out.println("Aktuell warten:");
 			System.out.println("---------------");
-			
+
 			while( !meineQueue.isEmpty() )
 			{
 				Kunde aktuellerKunde = meineQueue.front();
-				
+
 				System.out.println( aktuellerKunde.getName() );
-				
+
 				zwischenSpeicher.enqueue(aktuellerKunde);
 				meineQueue.dequeue();
 			}
-			
+
 			System.out.println();
-			
+
 			while( !zwischenSpeicher.isEmpty() )
 			{
 				Kunde aktuellerKunde = zwischenSpeicher.front();
@@ -135,7 +156,77 @@ public class Main
 				zwischenSpeicher.dequeue();
 			}
 		}
+	}
+	
+	
+	public static void loeschen()
+	{
+		Queue<Kunde> zwischenSpeicher = new Queue<Kunde>();
+		Scanner mS = new Scanner(System.in);
 		
-	} 
-  
+		System.out.println("Kunde lÃ¶schen");
+		System.out.println("-------------");
+		System.out.println();
+		
+		System.out.println("Welcher Kunde soll gelÃ¶scht werden?");
+		System.out.println();
+		String eingegebenerName = mS.next();
+    	System.out.println();
+    	
+    	while( !meineQueue.isEmpty() )
+    	{
+    		Kunde aktuellerKunde = meineQueue.front();
+
+    		if( eingegebenerName.equals(aktuellerKunde.getName()) )
+    		{
+    			meineQueue.dequeue();
+    		}
+    		else
+    		{
+    			zwischenSpeicher.enqueue(aktuellerKunde);
+    			meineQueue.dequeue();
+    		}
+    	}
+    	
+    	System.out.println();
+    	
+    	while( !zwischenSpeicher.isEmpty() )
+		{
+			Kunde aktuellerKunde = zwischenSpeicher.front();
+			meineQueue.enqueue(aktuellerKunde);
+			zwischenSpeicher.dequeue();
+		}
+	}
+
+	
+	public static void zaehlen()
+	{
+		Queue<Kunde> zwischenSpeicher = new Queue<Kunde>();
+		int i = 0;
+
+		while( !meineQueue.isEmpty() )
+		{
+			Kunde aktuellerKunde = meineQueue.front();
+
+			zwischenSpeicher.enqueue(aktuellerKunde);
+			meineQueue.dequeue();
+			i = i + 1;
+		}
+
+		System.out.println(i+" Kunden warten in der Schlange");
+		System.out.println();
+
+		while( !zwischenSpeicher.isEmpty() )
+		{
+				Kunde aktuellerKunde = zwischenSpeicher.front();
+				meineQueue.enqueue(aktuellerKunde);
+				zwischenSpeicher.dequeue();
+		}
+	}
+	
+	
+	public static void bedient()
+	{
+		meineQueue.dequeue();
+	}
 } 
