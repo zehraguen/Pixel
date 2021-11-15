@@ -4,6 +4,10 @@ public class Main
 {
 
 	static Queue<Kunde> meineQueue = new Queue<Kunde>();
+	static Ware[] warenregal = new Ware[10];
+	
+	private int i = 0; 
+	
 
 	public static void main(String[] args)
 	{
@@ -12,7 +16,7 @@ public class Main
 			System.out.println();
 
 			System.out.println("_________________¶¶¶1___¶¶¶____¶¶¶1_______________\r\n"
-      					 + "__________________¶¶¶____¶¶¶____1¶¶1______________\r\n"
+						 + "__________________¶¶¶____¶¶¶____1¶¶1______________\r\n"
       			         + "___________________¶¶¶____¶¶¶____¶¶¶______________\r\n"
       			         + "___________________¶¶¶____¶¶¶____¶¶¶______________\r\n"
       			         + "__________________¶¶¶____1¶¶1___1¶¶1______________\r\n"
@@ -59,7 +63,9 @@ public class Main
 			System.out.println("3. Kunde xy loeschen");
 			System.out.println("4. Kunden zaehlen");
 			System.out.println("5. Erster Kunde verlaesst Pixel");
-			System.out.println("6. Programm verlassen");
+			System.out.println("6. Ware anliefern");
+			System.out.println("7. Ware anzeigen");
+			System.out.println("8. Programm verlassen");
 			System.out.println();
 			System.out.println("Deine Eingabe?");
 			System.out.println();
@@ -89,6 +95,14 @@ public class Main
 				bedient();
 			}
 			if(eingabe == 6)
+			{
+				anliefern();
+			}
+			if(eingabe == 7)
+			{
+				wAnzeigen();
+			}
+			if(eingabe == 8)
 			{
 				System.out.println("Pixel wurde beendet");
 				System.exit(0);
@@ -163,6 +177,8 @@ public class Main
 	{
 		Queue<Kunde> zwischenSpeicher = new Queue<Kunde>();
 		Scanner mS = new Scanner(System.in);
+		int anzahlVor = 0;
+		int anzahlNach = 0;
 		
 		System.out.println("Kunde löschen");
 		System.out.println("-------------");
@@ -170,8 +186,8 @@ public class Main
 		
 		System.out.println("Welcher Kunde soll gelöscht werden?");
 		System.out.println();
+		
 		String eingegebenerName = mS.next();
-    	System.out.println();
     	
     	while( !meineQueue.isEmpty() )
     	{
@@ -186,6 +202,8 @@ public class Main
     			zwischenSpeicher.enqueue(aktuellerKunde);
     			meineQueue.dequeue();
     		}
+    		
+    		anzahlVor = anzahlVor + 1;
     	}
     	
     	System.out.println();
@@ -195,14 +213,22 @@ public class Main
 			Kunde aktuellerKunde = zwischenSpeicher.front();
 			meineQueue.enqueue(aktuellerKunde);
 			zwischenSpeicher.dequeue();
+			
+			anzahlNach = anzahlNach + 1;
 		}
+    	
+    	//kontrolliert ob der Name in der Schlange ansteht
+    	if(anzahlVor == anzahlNach)
+    	{
+    		System.out.println("Der Kunde " +eingegebenerName+ " steht nicht in der Schlange");
+    	}
 	}
 
 	
 	public static void zaehlen()
 	{
 		Queue<Kunde> zwischenSpeicher = new Queue<Kunde>();
-		int i = 0;
+		int anzahl = 0;
 
 		while( !meineQueue.isEmpty() )
 		{
@@ -210,15 +236,16 @@ public class Main
 
 			zwischenSpeicher.enqueue(aktuellerKunde);
 			meineQueue.dequeue();
-			i = i + 1;
+			anzahl++;
 		}
 
-		System.out.println(i+" Kunden warten in der Schlange");
+		System.out.println(anzahl+" Kunden warten in der Schlange");
 		System.out.println();
 
 		while( !zwischenSpeicher.isEmpty() )
 		{
 				Kunde aktuellerKunde = zwischenSpeicher.front();
+				
 				meineQueue.enqueue(aktuellerKunde);
 				zwischenSpeicher.dequeue();
 		}
@@ -227,6 +254,72 @@ public class Main
 	
 	public static void bedient()
 	{
+		Kunde aktuellerKunde = meineQueue.front();
+		System.out.println("Der Kunde"+aktuellerKunde.getName()+"wurde bedient");
 		meineQueue.dequeue();
+	}
+	
+	
+	public static void anliefern()
+	{
+		boolean z = true;
+    	
+    	while(z || i < 10)
+    	{
+    		Scanner mS = new Scanner(System.in);
+    		System.out.println();
+    		System.out.println("Ware anlegen");
+    		System.out.println("------------");
+    		System.out.println();
+    	
+    		System.out.println("Wie heisst die Ware?");
+    		System.out.println();
+    		String eingegebenerName = mS.next();
+    		System.out.println();
+    	
+    		System.out.println("Wie viel Geld kostet die Ware?");
+    		System.out.println();
+    		double eingegebenerWert = mS.nextDouble();
+    		System.out.println();
+    	
+    		System.out.println("Die Menge der Waren");
+    		System.out.println();
+    		int eingegebeneMenge = mS.nextInt();
+    		System.out.println();
+    		
+    		Ware meineWare = new Ware(eingegebenerName, eingegebenerWert, eingegebeneMenge);
+    		warenregal[i] = meineWare;
+    		
+    		System.out.println();
+    		System.out.println("Die Ware " +meineWare.getName()+ " wurde angelegt");
+    		System.out.println();
+    		System.out.println();
+    		
+    		System.out.println("du kannst noch " +(9 - i)+ " Ware anlegen");
+    		System.out.println();
+    		System.out.println("klicke 1 um noch eine Ware anzulegen");
+    		System.out.println("klicke 2 um den Menuepunkt zu verlassen");
+    		System.out.println();
+    		int eingabe = mS.nextInt();
+    		System.out.println();
+    		
+    		i++;
+    		
+    		if(eingabe == 2)
+    		{
+    			z = false;
+    		}
+    	}
+	}
+	
+	public static void wAnzeigen()
+	{
+		int j = 0;
+		
+		while(j < i)
+		{
+			Ware meineWare = warenregal[j];
+			System.out.println(meineWare.getName());
+		}
 	}
 } 
