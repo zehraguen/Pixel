@@ -272,6 +272,19 @@ public class Main
     		System.out.println("------------");
     		System.out.println();
     	
+	public static void anliefern()
+	{
+		//boolean z = true;
+		int i = 0;
+    	
+    		while(i < 10) 
+    		{ 
+    		Scanner mS = new Scanner(System.in);
+    		System.out.println();
+    		System.out.println("Ware anlegen");
+    		System.out.println("------------");
+    		System.out.println();
+    	
     		System.out.println("Wie heisst die Ware?");
     		System.out.println();
     		String eingegebenerName = mS.next();
@@ -297,29 +310,30 @@ public class Main
     		
     		System.out.println("du kannst noch " +(9 - i)+ " Ware anlegen");
     		System.out.println();
-    		System.out.println("klicke 1 um noch eine Ware anzulegen");
+    		/*System.out.println("klicke 1 um noch eine Ware anzulegen");
     		System.out.println("klicke 2 um den Menuepunkt zu verlassen");
     		System.out.println();
     		int eingabe = mS.nextInt();
-    		System.out.println();
+    		System.out.println();*/
     		
     		i++;
     		
-    		if(eingabe == 2)
-    		{
-    			z = false;
+    		//if(eingabe == 2)
+    		//{
+    			//z = false;
+    		//}
     		}
-    	}
 	}
 	
 	public static void wAnzeigen()
 	{
 		int j = 0;
 		
-		while(j < i)
+		while(j < 10)
 		{
 			Ware meineWare = warenregal[j];
 			System.out.println(meineWare.getName());
+			j++;
 		}
 	}
-} 
+}
