@@ -279,49 +279,49 @@ public class Main
     	
     		while(i < 10) 
     		{ 
-    		Scanner mS = new Scanner(System.in);
-    		System.out.println();
-    		System.out.println("Ware anlegen");
-    		System.out.println("------------");
-    		System.out.println();
+    			Scanner mS = new Scanner(System.in);
+    			System.out.println();
+    			System.out.println("Ware anlegen");
+    			System.out.println("------------");
+    			System.out.println();
     	
-    		System.out.println("Wie heisst die Ware?");
-    		System.out.println();
-    		String eingegebenerName = mS.next();
-    		System.out.println();
+    			System.out.println("Wie heisst die Ware?");
+    			System.out.println();
+    			String eingegebenerName = mS.next();
+    			System.out.println();
     	
-    		System.out.println("Wie viel Geld kostet die Ware?");
-    		System.out.println();
-    		double eingegebenerWert = mS.nextDouble();
-    		System.out.println();
+    			System.out.println("Wie viel Geld kostet die Ware?");
+    			System.out.println();
+    			double eingegebenerWert = mS.nextDouble();
+    			System.out.println();
     	
-    		System.out.println("Die Menge der Waren");
-    		System.out.println();
-    		int eingegebeneMenge = mS.nextInt();
-    		System.out.println();
+    			System.out.println("Die Menge der Waren");
+    			System.out.println();
+    			int eingegebeneMenge = mS.nextInt();
+    			System.out.println();
     		
-    		Ware meineWare = new Ware(eingegebenerName, eingegebenerWert, eingegebeneMenge);
-    		warenregal[i] = meineWare;
+    			Ware meineWare = new Ware(eingegebenerName, eingegebenerWert, eingegebeneMenge);
+    			warenregal[i] = meineWare;
     		
-    		System.out.println();
-    		System.out.println("Die Ware " +meineWare.getName()+ " wurde angelegt");
-    		System.out.println();
-    		System.out.println();
+    			System.out.println();
+    			System.out.println("Die Ware " +meineWare.getName()+ " wurde angelegt");
+    			System.out.println();
+    			System.out.println();
     		
-    		System.out.println("du kannst noch " +(9 - i)+ " Ware anlegen");
-    		System.out.println();
-    		/*System.out.println("klicke 1 um noch eine Ware anzulegen");
-    		System.out.println("klicke 2 um den Menuepunkt zu verlassen");
-    		System.out.println();
-    		int eingabe = mS.nextInt();
-    		System.out.println();*/
+    			System.out.println("du kannst noch " +(9 - i)+ " Ware anlegen");
+    			System.out.println();
+    			/*System.out.println("klicke 1 um noch eine Ware anzulegen");
+    			System.out.println("klicke 2 um den Menuepunkt zu verlassen");
+    			System.out.println();
+    			int eingabe = mS.nextInt();
+    			System.out.println();*/
     		
-    		i++;
+    			i++;
     		
-    		//if(eingabe == 2)
-    		//{
+    			//if(eingabe == 2)
+    			//{
     			//z = false;
-    		//}
+    			//}
     		}
 	}
 	
