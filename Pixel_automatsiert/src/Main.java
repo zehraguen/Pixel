@@ -299,6 +299,7 @@ public class Main
     		
     			System.out.println("du kannst noch " +(9 - i)+ " Ware anlegen");
     			System.out.println();
+			
     			/*System.out.println("klicke 1 um noch eine Ware anzulegen");
     			System.out.println("klicke 2 um den Menuepunkt zu verlassen");
     			System.out.println();
